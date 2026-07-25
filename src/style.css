@@ -362,29 +362,38 @@ button {
 
 .signal-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 4vw, 2.5rem);
+  row-gap: clamp(2rem, 4vw, 2.75rem);
   max-width: var(--max);
   margin: 0 auto;
-  padding: 2.5rem var(--pad);
+  padding: clamp(2.75rem, 7vw, 4.5rem) var(--pad);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .signal-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 3rem var(--pad);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: clamp(2.5rem, 5vw, 4.5rem);
+    row-gap: 2.5rem;
   }
 }
 
 .signal {
   min-width: 0;
+  padding-right: 0.25rem;
+}
+
+@media (min-width: 900px) {
+  .signal:not(:last-child) {
+    padding-right: clamp(1rem, 2vw, 1.75rem);
+    border-right: 1px solid var(--line);
+  }
 }
 
 .signal-value {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-size: clamp(2.35rem, 5vw, 3.35rem);
   line-height: 1;
   color: var(--mint);
   letter-spacing: -0.02em;
@@ -392,15 +401,15 @@ button {
 
 .signal-label {
   display: block;
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
   color: #eef6f2;
 }
 
 .signal-detail {
   display: block;
-  margin-top: 0.2rem;
-  font-size: 0.7rem;
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
   color: var(--fog-dim);
   letter-spacing: 0.04em;
 }
