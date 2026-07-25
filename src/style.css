@@ -107,7 +107,8 @@ button {
 
 .nav {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 1.75rem;
 }
 
 .nav a {
@@ -115,6 +116,7 @@ button {
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nav a:hover {
@@ -156,17 +158,16 @@ button {
 
 @media (min-width: 900px) {
   .hero-shell {
-    grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1fr);
-    column-gap: 4rem;
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
+    column-gap: 4.5rem;
   }
 
   .hero-content {
-    padding-right: 0.5rem;
+    padding-right: 0.75rem;
   }
 
   .hero-visual {
     justify-self: end;
-    margin-left: 0.75rem;
   }
 
 }
@@ -191,7 +192,7 @@ button {
 .hero-brand {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.6rem, 6.5vw, 4.5rem);
+  font-size: clamp(2.4rem, 5.5vw, 3.85rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
   color: #eef6f2;
@@ -252,9 +253,9 @@ button {
 
 .hero-devices {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
-  gap: clamp(0.85rem, 2.2vw, 1.4rem);
+  gap: clamp(1rem, 2.4vw, 1.5rem);
   width: 100%;
 }
 
@@ -265,37 +266,31 @@ button {
   align-items: center;
   gap: 0.8rem;
   min-width: 0;
+  flex: 1 1 0;
+  max-width: 230px;
 }
 
-.hero-device-card--pixel {
-  flex: 0 1 52%;
-  z-index: 2;
-}
-
+.hero-device-card--pixel,
 .hero-device-card--ios {
-  flex: 0 1 44%;
-  z-index: 1;
-  transform: translateY(0.6rem);
+  transform: none;
 }
 
 .hero-device {
+  display: block;
   width: 100%;
-  max-width: 220px;
+  max-width: 210px;
   height: auto;
+  aspect-ratio: 300 / 620;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
 }
 
-.hero-device-card--ios .hero-device {
-  max-width: 185px;
-}
-
 @media (min-width: 900px) {
-  .hero-device-card--pixel .hero-device {
-    max-width: 245px;
+  .hero-device-card {
+    max-width: 230px;
   }
 
-  .hero-device-card--ios .hero-device {
-    max-width: 205px;
+  .hero-device {
+    max-width: 220px;
   }
 }
 
