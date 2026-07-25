@@ -314,8 +314,8 @@ main {
 }
 
 .hero-device-title .brand-logo {
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
 .hero-device-title .brand-logo--apple {
@@ -323,10 +323,17 @@ main {
   height: 0.95rem;
 }
 
+.hero-device-title .brand-logo--android {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
 .brand-logo {
   width: 1.35rem;
   height: 1.35rem;
   flex-shrink: 0;
+  display: block;
 }
 
 .hero-device-label strong {

@@ -36,14 +36,10 @@ function socialClass(url) {
   return !url || url === '#' ? 'is-placeholder' : '';
 }
 
-function googleLogo() {
+function androidLogo() {
+  const src = `${import.meta.env.BASE_URL}android-logo.png`;
   return `
-    <svg class="brand-logo" viewBox="0 0 24 24" aria-hidden="true">
-      <path fill="#EA4335" d="M12 10.2v3.6h5.1c-.2 1.2-.9 2.2-1.9 2.9l3.1 2.4c1.8-1.7 2.9-4.1 2.9-7 0-.7-.1-1.3-.2-1.9H12z"/>
-      <path fill="#34A853" d="M6.6 14.3l-.9.7-2.8 2.2C4.5 20.5 8 22.8 12 22.8c2.4 0 4.4-.8 5.9-2.1l-3.1-2.4c-.8.6-1.9.9-2.8.9-2.2 0-4-1.5-4.7-3.5z"/>
-      <path fill="#4A90E2" d="M2.9 7.2C2.3 8.4 2 9.7 2 11.1s.3 2.7.9 3.9l3.7-2.9c-.2-.6-.3-1.3-.3-1.9s.1-1.3.3-1.9L2.9 7.2z"/>
-      <path fill="#FBBC05" d="M12 5.3c1.3 0 2.5.5 3.4 1.3l2.6-2.6C16.4 2.5 14.4 1.6 12 1.6 8 1.6 4.5 3.9 2.9 7.2l3.7 2.9C7.9 6.8 9.8 5.3 12 5.3z"/>
-    </svg>
+    <img class="brand-logo brand-logo--android" src="${src}" alt="" width="24" height="24" />
   `;
 }
 
@@ -88,7 +84,7 @@ function heroVisual() {
           </svg>
           <figcaption class="hero-device-label">
             <div class="hero-device-title">
-              ${googleLogo()}
+              ${androidLogo()}
               <strong>Android</strong>
             </div>
             <span>Compose · Kotlin · Flutter</span>
