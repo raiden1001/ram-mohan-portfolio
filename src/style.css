@@ -89,6 +89,11 @@ button {
 #app {
   position: relative;
   z-index: 2;
+  overflow: visible;
+}
+
+main {
+  overflow: visible;
 }
 
 .site-header {
@@ -413,15 +418,22 @@ button {
 }
 
 .section-title--contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2em;
   max-width: none;
-  line-height: 1.2;
-  padding-block: 0.12em;
+  line-height: normal;
+  overflow: visible;
 }
 
-.section-title--contact br {
+.section-title-line {
   display: block;
-  content: '';
-  margin-top: 0.08em;
+  line-height: 1.25;
+  overflow: visible;
+  /* Syne clips descenders (g) without extra room in the line box */
+  padding-bottom: 0.18em;
+  margin-bottom: -0.08em;
 }
 
 .section-lede {
@@ -432,11 +444,17 @@ button {
 
 #writing {
   padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  overflow: visible;
 }
 
 #contact.contact {
   padding-top: clamp(1.5rem, 3vw, 2.25rem);
   padding-bottom: clamp(3.5rem, 8vw, 5rem);
+  overflow: visible;
+}
+
+#contact .section-inner {
+  overflow: visible;
 }
 
 /* —— Signals —— */

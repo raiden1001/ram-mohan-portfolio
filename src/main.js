@@ -317,7 +317,8 @@ app.innerHTML = `
       <div class="section-inner">
         <p class="section-label">Contact</p>
         <h2 class="section-title section-title--contact" id="contact-title">
-          Let’s build<br />something solid
+          <span class="section-title-line">Let’s build something</span>
+          <span class="section-title-line">solid</span>
         </h2>
         <p class="section-lede">${escapeHtml(resume.summary)}</p>
         <div class="contact-row">
