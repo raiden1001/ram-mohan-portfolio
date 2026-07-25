@@ -10,7 +10,7 @@ export const resume = {
   phone: '+91 9497891704',
   social: {
     linkedin: '#',
-    github: 'https://github.com/ramsimplogics',
+    github: 'https://github.com/raiden1001',
   },
   summary:
     'Senior Android Engineer with 4+ years building high-scale FinTech and hybrid mobile applications, including a banking platform serving 500K+ active users. Specializes in Kotlin, Jetpack Compose, and Clean Architecture — bridging native Android, iOS (Swift), and Flutter to ship cross-platform features without full rewrites.',
