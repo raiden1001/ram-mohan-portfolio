@@ -3,7 +3,7 @@
 Public **Impact Atlas** portfolio for [Ram Mohan](mailto:ram10.rm6@gmail.com), Senior Android Engineer.
 
 Live site (after Pages is enabled):  
-`https://<your-github-username>.github.io/ram-mohan-portfolio/`
+[https://raiden1001.github.io/ram-mohan-portfolio/](https://raiden1001.github.io/ram-mohan-portfolio/)
 
 ## Local development
 
