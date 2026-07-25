@@ -89,7 +89,7 @@ function heroVisual() {
           <figcaption class="hero-device-label">
             <div class="hero-device-title">
               ${googleLogo()}
-              <strong>Pixel</strong>
+              <strong>Android</strong>
             </div>
             <span>Compose · Kotlin · Flutter</span>
           </figcaption>
