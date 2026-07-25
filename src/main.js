@@ -192,7 +192,7 @@ app.innerHTML = `
       ${heroVisual()}
       <div class="hero-content">
         <p class="hero-role">${escapeHtml(resume.role)} · ${escapeHtml(resume.locationNote)}</p>
-        <h1 class="hero-brand">${brandChars(resume.brand)}</h1>
+        <h1 class="hero-brand" aria-label="${escapeHtml(resume.brand)}">${brandChars(resume.brand)}</h1>
         <p class="hero-tagline">${escapeHtml(resume.tagline)}</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#work">View work</a>

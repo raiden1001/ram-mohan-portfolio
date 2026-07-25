@@ -7,9 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "publish": "bash scripts/publish.sh"
   },
   "devDependencies": {
     "vite": "^8.1.1"
+  },
+  "description": "Ram Mohan — Senior Android Engineer portfolio (Impact Atlas)",
+  "engines": {
+    "node": ">=20"
   }
 }
