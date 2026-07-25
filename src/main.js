@@ -11,14 +11,21 @@ function escapeHtml(str) {
     .replaceAll('"', '&quot;');
 }
 
-function brandChars(text) {
-  return [...text]
-    .map((ch, i) => {
-      const delay = 0.2 + i * 0.035;
-      const content = ch === ' ' ? '&nbsp;' : escapeHtml(ch);
-      return `<span class="char" style="animation-delay:${delay}s">${content}</span>`;
+function brandMarkup(text) {
+  let charIndex = 0;
+  return text
+    .split(/\s+/)
+    .map((word) => {
+      const letters = [...word]
+        .map((ch) => {
+          const delay = 0.18 + charIndex * 0.03;
+          charIndex += 1;
+          return `<span class="char" style="animation-delay:${delay}s">${escapeHtml(ch)}</span>`;
+        })
+        .join('');
+      return `<span class="brand-word">${letters}</span>`;
     })
-    .join('');
+    .join('<span class="brand-space" aria-hidden="true"> </span>');
 }
 
 function socialHref(url) {
@@ -32,43 +39,34 @@ function socialClass(url) {
 function heroVisual() {
   return `
     <div class="hero-visual" aria-hidden="true">
-      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <svg class="hero-device" viewBox="0 0 360 680" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#3dffb0" stop-opacity="0.25"/>
-            <stop offset="55%" stop-color="#0a1210" stop-opacity="0"/>
-            <stop offset="100%" stop-color="#ffb84a" stop-opacity="0.18"/>
-          </linearGradient>
           <linearGradient id="phone" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#1a2e28"/>
             <stop offset="100%" stop-color="#0d1815"/>
           </linearGradient>
+          <linearGradient id="screenGlow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3dffb0" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#ffb84a" stop-opacity="0.08"/>
+          </linearGradient>
         </defs>
-        <rect width="1440" height="900" fill="#0a1210"/>
-        <path d="M900 0 L1440 0 L1440 900 L620 900 Z" fill="url(#g1)"/>
-        <!-- Abstract device / architecture plane -->
-        <g transform="translate(780 120)">
-          <rect x="0" y="0" width="340" height="620" rx="36" fill="url(#phone)" stroke="#3dffb0" stroke-opacity="0.35" stroke-width="2"/>
-          <rect x="24" y="48" width="292" height="500" rx="8" fill="#0a1210" stroke="#c8d4cf" stroke-opacity="0.12"/>
-          <rect x="40" y="72" width="160" height="10" rx="2" fill="#3dffb0" opacity="0.7"/>
-          <rect x="40" y="98" width="240" height="6" rx="2" fill="#8a9a93" opacity="0.5"/>
-          <rect x="40" y="118" width="200" height="6" rx="2" fill="#8a9a93" opacity="0.35"/>
-          <g opacity="0.85">
-            <rect x="40" y="160" width="120" height="90" rx="6" fill="#162420" stroke="#3dffb0" stroke-opacity="0.4"/>
-            <rect x="176" y="160" width="120" height="90" rx="6" fill="#162420" stroke="#ffb84a" stroke-opacity="0.45"/>
-            <rect x="40" y="268" width="256" height="70" rx="6" fill="#162420" stroke="#c8d4cf" stroke-opacity="0.15"/>
-            <rect x="40" y="356" width="256" height="120" rx="6" fill="#101a17" stroke="#3dffb0" stroke-opacity="0.25"/>
-          </g>
-          <circle cx="170" cy="580" r="14" fill="none" stroke="#8a9a93" stroke-opacity="0.4"/>
-          <!-- Flow lines -->
-          <path d="M-180 200 C-80 180, -40 260, 40 205" fill="none" stroke="#ffb84a" stroke-opacity="0.45" stroke-width="1.5" stroke-dasharray="6 8"/>
-          <path d="M-160 320 C-60 300, -20 380, 40 340" fill="none" stroke="#3dffb0" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="4 10"/>
-          <text x="-200" y="190" fill="#ffb84a" font-family="IBM Plex Mono, monospace" font-size="12" opacity="0.7">UI</text>
-          <text x="-200" y="310" fill="#3dffb0" font-family="IBM Plex Mono, monospace" font-size="12" opacity="0.7">DOMAIN</text>
-          <text x="-200" y="430" fill="#8a9a93" font-family="IBM Plex Mono, monospace" font-size="12" opacity="0.7">DATA</text>
-          <path d="M-160 440 C-40 420, 0 500, 40 470" fill="none" stroke="#8a9a93" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="3 8"/>
-        </g>
+        <rect x="24" y="16" width="312" height="648" rx="40" fill="url(#phone)" stroke="#3dffb0" stroke-opacity="0.4" stroke-width="2"/>
+        <rect x="48" y="64" width="264" height="520" rx="10" fill="#0a1210" stroke="#c8d4cf" stroke-opacity="0.1"/>
+        <rect x="48" y="64" width="264" height="520" rx="10" fill="url(#screenGlow)"/>
+        <rect x="68" y="92" width="140" height="12" rx="3" fill="#3dffb0" opacity="0.75"/>
+        <rect x="68" y="120" width="210" height="7" rx="2" fill="#8a9a93" opacity="0.45"/>
+        <rect x="68" y="140" width="170" height="7" rx="2" fill="#8a9a93" opacity="0.3"/>
+        <rect x="68" y="188" width="108" height="88" rx="8" fill="#162420" stroke="#3dffb0" stroke-opacity="0.45"/>
+        <rect x="192" y="188" width="108" height="88" rx="8" fill="#162420" stroke="#ffb84a" stroke-opacity="0.5"/>
+        <rect x="68" y="296" width="232" height="64" rx="8" fill="#162420" stroke="#c8d4cf" stroke-opacity="0.12"/>
+        <rect x="68" y="380" width="232" height="140" rx="8" fill="#101a17" stroke="#3dffb0" stroke-opacity="0.28"/>
+        <circle cx="180" cy="620" r="16" fill="none" stroke="#8a9a93" stroke-opacity="0.45"/>
       </svg>
+      <div class="hero-orbit">
+        <span>Compose</span>
+        <span>Kotlin</span>
+        <span>Clean Arch</span>
+      </div>
     </div>
   `;
 }
@@ -189,15 +187,17 @@ app.innerHTML = `
 
   <main id="top">
     <section class="hero" aria-label="Introduction">
-      ${heroVisual()}
-      <div class="hero-content">
-        <p class="hero-role">${escapeHtml(resume.role)} · ${escapeHtml(resume.locationNote)}</p>
-        <h1 class="hero-brand" aria-label="${escapeHtml(resume.brand)}">${brandChars(resume.brand)}</h1>
-        <p class="hero-tagline">${escapeHtml(resume.tagline)}</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#work">View work</a>
-          <a class="btn btn-ghost" href="#contact">Contact</a>
+      <div class="hero-shell">
+        <div class="hero-content">
+          <p class="hero-role">${escapeHtml(resume.role)} · ${escapeHtml(resume.locationNote)}</p>
+          <h1 class="hero-brand" aria-label="${escapeHtml(resume.brand)}">${brandMarkup(resume.brand)}</h1>
+          <p class="hero-tagline">${escapeHtml(resume.tagline)}</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#work">View work</a>
+            <a class="btn btn-ghost" href="#contact">Contact</a>
+          </div>
         </div>
+        ${heroVisual()}
       </div>
     </section>
 
