@@ -316,7 +316,9 @@ app.innerHTML = `
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="section-inner">
         <p class="section-label">Contact</p>
-        <h2 class="section-title" id="contact-title">Let’s build something solid</h2>
+        <h2 class="section-title section-title--contact" id="contact-title">
+          Let’s build<br />something solid
+        </h2>
         <p class="section-lede">${escapeHtml(resume.summary)}</p>
         <div class="contact-row">
           <div class="contact-item">
