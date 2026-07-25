@@ -169,9 +169,6 @@ button {
     margin-left: 0.75rem;
   }
 
-  .hero-brand {
-    max-width: 9.5ch;
-  }
 }
 
 .hero-content {
@@ -194,15 +191,16 @@ button {
 .hero-brand {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(3.4rem, 9vw, 6.75rem);
-  line-height: 0.92;
-  letter-spacing: -0.035em;
+  font-size: clamp(2.6rem, 6.5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
   color: #eef6f2;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   column-gap: 0.28em;
   row-gap: 0.05em;
+  max-width: 100%;
 }
 
 .hero-brand .brand-word {
