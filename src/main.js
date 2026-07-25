@@ -58,49 +58,80 @@ function appleLogo() {
 function heroVisual() {
   return `
     <div class="hero-visual" aria-hidden="true">
-      <figure class="hero-device-card">
-        <svg class="hero-device" viewBox="0 0 300 620" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="pixelBody" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#1a2e28"/>
-              <stop offset="100%" stop-color="#0d1815"/>
-            </linearGradient>
-            <linearGradient id="pixelGlow" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#3dffb0" stop-opacity="0.14"/>
-              <stop offset="100%" stop-color="#ffb84a" stop-opacity="0.08"/>
-            </linearGradient>
-          </defs>
-          <rect x="18" y="10" width="264" height="600" rx="34" fill="url(#pixelBody)" stroke="#3dffb0" stroke-opacity="0.45" stroke-width="2"/>
-          <rect x="28" y="22" width="244" height="576" rx="28" fill="#050a08"/>
-          <rect x="28" y="22" width="244" height="576" rx="28" fill="url(#pixelGlow)"/>
-          <rect x="110" y="30" width="80" height="18" rx="9" fill="#0a1210" stroke="#c8d4cf" stroke-opacity="0.18"/>
-          <circle cx="150" cy="39" r="4" fill="#3dffb0" opacity="0.55"/>
-          <rect x="48" y="72" width="120" height="10" rx="3" fill="#3dffb0" opacity="0.8"/>
-          <rect x="48" y="98" width="188" height="6" rx="2" fill="#8a9a93" opacity="0.45"/>
-          <rect x="48" y="116" width="150" height="6" rx="2" fill="#8a9a93" opacity="0.3"/>
-          <rect x="48" y="160" width="90" height="78" rx="10" fill="#162420" stroke="#3dffb0" stroke-opacity="0.45"/>
-          <rect x="150" y="160" width="90" height="78" rx="10" fill="#162420" stroke="#ffb84a" stroke-opacity="0.5"/>
-          <rect x="48" y="256" width="192" height="56" rx="10" fill="#162420" stroke="#c8d4cf" stroke-opacity="0.12"/>
-          <rect x="48" y="332" width="192" height="150" rx="12" fill="#101a17" stroke="#3dffb0" stroke-opacity="0.3"/>
-          <rect x="108" y="560" width="84" height="5" rx="2.5" fill="#c8d4cf" opacity="0.45"/>
-        </svg>
-      </figure>
-
-      <div class="platform-row">
-        <div class="platform-card">
-          ${googleLogo()}
-          <div class="platform-copy">
-            <strong>Android</strong>
+      <div class="hero-devices">
+        <figure class="hero-device-card hero-device-card--pixel">
+          <svg class="hero-device" viewBox="0 0 300 620" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="pixelBody" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1a2e28"/>
+                <stop offset="100%" stop-color="#0d1815"/>
+              </linearGradient>
+              <linearGradient id="pixelGlow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3dffb0" stop-opacity="0.14"/>
+                <stop offset="100%" stop-color="#ffb84a" stop-opacity="0.08"/>
+              </linearGradient>
+            </defs>
+            <rect x="18" y="10" width="264" height="600" rx="34" fill="url(#pixelBody)" stroke="#3dffb0" stroke-opacity="0.45" stroke-width="2"/>
+            <rect x="28" y="22" width="244" height="576" rx="28" fill="#050a08"/>
+            <rect x="28" y="22" width="244" height="576" rx="28" fill="url(#pixelGlow)"/>
+            <rect x="110" y="30" width="80" height="18" rx="9" fill="#0a1210" stroke="#c8d4cf" stroke-opacity="0.18"/>
+            <circle cx="150" cy="39" r="4" fill="#3dffb0" opacity="0.55"/>
+            <!-- Google mark on screen -->
+            <g transform="translate(118 88) scale(2.6)">
+              <path fill="#EA4335" d="M12 10.2v3.6h5.1c-.2 1.2-.9 2.2-1.9 2.9l3.1 2.4c1.8-1.7 2.9-4.1 2.9-7 0-.7-.1-1.3-.2-1.9H12z"/>
+              <path fill="#34A853" d="M6.6 14.3l-.9.7-2.8 2.2C4.5 20.5 8 22.8 12 22.8c2.4 0 4.4-.8 5.9-2.1l-3.1-2.4c-.8.6-1.9.9-2.8.9-2.2 0-4-1.5-4.7-3.5z"/>
+              <path fill="#4A90E2" d="M2.9 7.2C2.3 8.4 2 9.7 2 11.1s.3 2.7.9 3.9l3.7-2.9c-.2-.6-.3-1.3-.3-1.9s.1-1.3.3-1.9L2.9 7.2z"/>
+              <path fill="#FBBC05" d="M12 5.3c1.3 0 2.5.5 3.4 1.3l2.6-2.6C16.4 2.5 14.4 1.6 12 1.6 8 1.6 4.5 3.9 2.9 7.2l3.7 2.9C7.9 6.8 9.8 5.3 12 5.3z"/>
+            </g>
+            <rect x="48" y="200" width="90" height="70" rx="10" fill="#162420" stroke="#3dffb0" stroke-opacity="0.45"/>
+            <rect x="150" y="200" width="90" height="70" rx="10" fill="#162420" stroke="#ffb84a" stroke-opacity="0.5"/>
+            <rect x="48" y="288" width="192" height="52" rx="10" fill="#162420" stroke="#c8d4cf" stroke-opacity="0.12"/>
+            <rect x="48" y="360" width="192" height="130" rx="12" fill="#101a17" stroke="#3dffb0" stroke-opacity="0.3"/>
+            <rect x="108" y="560" width="84" height="5" rx="2.5" fill="#c8d4cf" opacity="0.45"/>
+          </svg>
+          <figcaption class="hero-device-label">
+            <div class="hero-device-title">
+              ${googleLogo()}
+              <strong>Pixel</strong>
+            </div>
             <span>Compose · Kotlin · Flutter</span>
-          </div>
-        </div>
-        <div class="platform-card">
-          ${appleLogo()}
-          <div class="platform-copy">
-            <strong>iOS</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="hero-device-card hero-device-card--ios">
+          <svg class="hero-device" viewBox="0 0 300 620" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="iosBody" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1c2428"/>
+                <stop offset="100%" stop-color="#0e1418"/>
+              </linearGradient>
+              <linearGradient id="iosGlow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#5ac8fa" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#ffb84a" stop-opacity="0.08"/>
+              </linearGradient>
+            </defs>
+            <rect x="22" y="12" width="256" height="596" rx="48" fill="url(#iosBody)" stroke="#5ac8fa" stroke-opacity="0.4" stroke-width="2"/>
+            <rect x="30" y="20" width="240" height="580" rx="42" fill="#070b0e"/>
+            <rect x="30" y="20" width="240" height="580" rx="42" fill="url(#iosGlow)"/>
+            <rect x="108" y="34" width="84" height="22" rx="11" fill="#05080a"/>
+            <!-- Apple mark on screen -->
+            <g transform="translate(126 92) scale(2.2)">
+              <path fill="#eef6f2" d="M16.7 12.7c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3.1-1.6-1.3-.1-2.5.8-3.2.8-.7 0-1.7-.8-2.8-.7-1.4 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.8 2.1 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1 2.6-2 .8-1.2 1.1-2.3 1.1-2.4-.1 0-2.2-.8-2.2-3.7zM14.7 6.3c.6-.8 1-1.8.9-2.9-1 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-.9 2.8 1.1.1 2.2-.5 2.8-1.3z"/>
+            </g>
+            <rect x="52" y="200" width="196" height="64" rx="14" fill="#142028" stroke="#5ac8fa" stroke-opacity="0.4"/>
+            <rect x="52" y="282" width="92" height="84" rx="16" fill="#142028" stroke="#ffb84a" stroke-opacity="0.45"/>
+            <rect x="156" y="282" width="92" height="84" rx="16" fill="#142028" stroke="#5ac8fa" stroke-opacity="0.35"/>
+            <rect x="52" y="386" width="196" height="110" rx="16" fill="#101820" stroke="#c8d4cf" stroke-opacity="0.15"/>
+            <rect x="110" y="562" width="80" height="4" rx="2" fill="#c8d4cf" opacity="0.5"/>
+          </svg>
+          <figcaption class="hero-device-label">
+            <div class="hero-device-title">
+              ${appleLogo()}
+              <strong>iOS</strong>
+            </div>
             <span>Swift · Flutter</span>
-          </div>
-        </div>
+          </figcaption>
+        </figure>
       </div>
     </div>
   `;
