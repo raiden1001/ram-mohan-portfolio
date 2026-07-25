@@ -39,33 +39,68 @@ function socialClass(url) {
 function heroVisual() {
   return `
     <div class="hero-visual" aria-hidden="true">
-      <svg class="hero-device" viewBox="0 0 360 680" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="phone" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1a2e28"/>
-            <stop offset="100%" stop-color="#0d1815"/>
-          </linearGradient>
-          <linearGradient id="screenGlow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#3dffb0" stop-opacity="0.12"/>
-            <stop offset="100%" stop-color="#ffb84a" stop-opacity="0.08"/>
-          </linearGradient>
-        </defs>
-        <rect x="24" y="16" width="312" height="648" rx="40" fill="url(#phone)" stroke="#3dffb0" stroke-opacity="0.4" stroke-width="2"/>
-        <rect x="48" y="64" width="264" height="520" rx="10" fill="#0a1210" stroke="#c8d4cf" stroke-opacity="0.1"/>
-        <rect x="48" y="64" width="264" height="520" rx="10" fill="url(#screenGlow)"/>
-        <rect x="68" y="92" width="140" height="12" rx="3" fill="#3dffb0" opacity="0.75"/>
-        <rect x="68" y="120" width="210" height="7" rx="2" fill="#8a9a93" opacity="0.45"/>
-        <rect x="68" y="140" width="170" height="7" rx="2" fill="#8a9a93" opacity="0.3"/>
-        <rect x="68" y="188" width="108" height="88" rx="8" fill="#162420" stroke="#3dffb0" stroke-opacity="0.45"/>
-        <rect x="192" y="188" width="108" height="88" rx="8" fill="#162420" stroke="#ffb84a" stroke-opacity="0.5"/>
-        <rect x="68" y="296" width="232" height="64" rx="8" fill="#162420" stroke="#c8d4cf" stroke-opacity="0.12"/>
-        <rect x="68" y="380" width="232" height="140" rx="8" fill="#101a17" stroke="#3dffb0" stroke-opacity="0.28"/>
-        <circle cx="180" cy="620" r="16" fill="none" stroke="#8a9a93" stroke-opacity="0.45"/>
-      </svg>
-      <div class="hero-orbit">
-        <span>Compose</span>
-        <span>Kotlin</span>
-        <span>Clean Arch</span>
+      <div class="hero-devices">
+        <figure class="hero-device-card hero-device-card--pixel">
+          <svg class="hero-device" viewBox="0 0 300 620" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="pixelBody" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1a2e28"/>
+                <stop offset="100%" stop-color="#0d1815"/>
+              </linearGradient>
+              <linearGradient id="pixelGlow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3dffb0" stop-opacity="0.14"/>
+                <stop offset="100%" stop-color="#ffb84a" stop-opacity="0.08"/>
+              </linearGradient>
+            </defs>
+            <rect x="18" y="10" width="264" height="600" rx="34" fill="url(#pixelBody)" stroke="#3dffb0" stroke-opacity="0.45" stroke-width="2"/>
+            <rect x="28" y="22" width="244" height="576" rx="28" fill="#050a08"/>
+            <rect x="28" y="22" width="244" height="576" rx="28" fill="url(#pixelGlow)"/>
+            <rect x="110" y="30" width="80" height="18" rx="9" fill="#0a1210" stroke="#c8d4cf" stroke-opacity="0.18"/>
+            <circle cx="150" cy="39" r="4" fill="#3dffb0" opacity="0.55"/>
+            <rect x="48" y="72" width="120" height="10" rx="3" fill="#3dffb0" opacity="0.8"/>
+            <rect x="48" y="98" width="188" height="6" rx="2" fill="#8a9a93" opacity="0.45"/>
+            <rect x="48" y="116" width="150" height="6" rx="2" fill="#8a9a93" opacity="0.3"/>
+            <rect x="48" y="160" width="90" height="78" rx="10" fill="#162420" stroke="#3dffb0" stroke-opacity="0.45"/>
+            <rect x="150" y="160" width="90" height="78" rx="10" fill="#162420" stroke="#ffb84a" stroke-opacity="0.5"/>
+            <rect x="48" y="256" width="192" height="56" rx="10" fill="#162420" stroke="#c8d4cf" stroke-opacity="0.12"/>
+            <rect x="48" y="332" width="192" height="150" rx="12" fill="#101a17" stroke="#3dffb0" stroke-opacity="0.3"/>
+            <rect x="108" y="560" width="84" height="5" rx="2.5" fill="#c8d4cf" opacity="0.45"/>
+          </svg>
+          <figcaption class="hero-device-label">
+            <strong>Pixel</strong>
+            <span>Compose · Kotlin</span>
+          </figcaption>
+        </figure>
+
+        <figure class="hero-device-card hero-device-card--ios">
+          <svg class="hero-device" viewBox="0 0 300 620" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="iosBody" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1c2428"/>
+                <stop offset="100%" stop-color="#0e1418"/>
+              </linearGradient>
+              <linearGradient id="iosGlow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#5ac8fa" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#ffb84a" stop-opacity="0.08"/>
+              </linearGradient>
+            </defs>
+            <rect x="22" y="12" width="256" height="596" rx="48" fill="url(#iosBody)" stroke="#5ac8fa" stroke-opacity="0.4" stroke-width="2"/>
+            <rect x="30" y="20" width="240" height="580" rx="42" fill="#070b0e"/>
+            <rect x="30" y="20" width="240" height="580" rx="42" fill="url(#iosGlow)"/>
+            <rect x="108" y="34" width="84" height="22" rx="11" fill="#05080a"/>
+            <rect x="52" y="84" width="100" height="10" rx="3" fill="#5ac8fa" opacity="0.75"/>
+            <rect x="52" y="110" width="176" height="6" rx="2" fill="#8a9a93" opacity="0.4"/>
+            <rect x="52" y="154" width="196" height="72" rx="14" fill="#142028" stroke="#5ac8fa" stroke-opacity="0.4"/>
+            <rect x="52" y="242" width="92" height="92" rx="16" fill="#142028" stroke="#ffb84a" stroke-opacity="0.45"/>
+            <rect x="156" y="242" width="92" height="92" rx="16" fill="#142028" stroke="#5ac8fa" stroke-opacity="0.35"/>
+            <rect x="52" y="352" width="196" height="120" rx="16" fill="#101820" stroke="#c8d4cf" stroke-opacity="0.15"/>
+            <rect x="110" y="562" width="80" height="4" rx="2" fill="#c8d4cf" opacity="0.5"/>
+          </svg>
+          <figcaption class="hero-device-label">
+            <strong>iOS</strong>
+            <span>Native Flutter</span>
+          </figcaption>
+        </figure>
       </div>
     </div>
   `;
@@ -166,7 +201,11 @@ function renderWriting() {
     .map(
       (w) => `
       <li>
-        <a href="${escapeHtml(socialHref(w.href))}" ${w.href === '#' ? 'aria-disabled="true" tabindex="-1" class="is-placeholder"' : 'target="_blank" rel="noopener noreferrer"'}>
+        <a href="${escapeHtml(socialHref(w.href))}" ${
+          w.href === '#'
+            ? 'aria-disabled="true" tabindex="-1" class="is-placeholder"'
+            : 'target="_blank" rel="noopener noreferrer"'
+        }>
           <span>${escapeHtml(w.title)}</span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
@@ -177,10 +216,10 @@ function renderWriting() {
 
 app.innerHTML = `
   <header class="site-header">
-    <a class="mark" href="#top">${escapeHtml(resume.brand)}</a>
     <nav class="nav" aria-label="Primary">
       <a href="#work">Work</a>
       <a href="#process">Process</a>
+      <a href="#writing">Writing</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -265,7 +304,7 @@ app.innerHTML = `
           <div class="contact-item">
             <span>LinkedIn</span>
             <a class="${socialClass(resume.social.linkedin)}" href="${escapeHtml(socialHref(resume.social.linkedin))}" ${resume.social.linkedin === '#' ? 'aria-disabled="true"' : 'target="_blank" rel="noopener noreferrer"'}>
-              ${resume.social.linkedin === '#' ? 'Add URL in resume.js' : 'Profile'}
+              ${resume.social.linkedin === '#' ? 'Add URL in resume.js' : 'LinkedIn'}
             </a>
           </div>
           <div class="contact-item">

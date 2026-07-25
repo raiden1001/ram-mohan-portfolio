@@ -9,7 +9,7 @@ export const resume = {
   email: 'ram10.rm6@gmail.com',
   phone: '+91 9497891704',
   social: {
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/ram-mohan-b750a1180/',
     github: 'https://github.com/raiden1001',
   },
   summary:
@@ -155,7 +155,7 @@ export const resume = {
   writing: [
     {
       title: 'Jetpack Compose vs XML – The 2025 Face-off for Android UI Supremacy',
-      href: '#',
+      href: 'https://medium.com/@ram10.rm6/jetpack-compose-vs-xml-the-2025-face-off-for-android-ui-supremacy-c8ea543f1820',
     },
     {
       title: 'Clean Architecture in Android – What I Did Right, What Broke, and How to Fix It',

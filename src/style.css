@@ -99,18 +99,10 @@ button {
   z-index: 20;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 1rem var(--pad);
   background: linear-gradient(to bottom, rgba(10, 18, 16, 0.92), transparent);
   backdrop-filter: blur(6px);
-}
-
-.mark {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  color: #eef6f2;
 }
 
 .nav {
@@ -164,8 +156,8 @@ button {
 
 @media (min-width: 900px) {
   .hero-shell {
-    grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
-    gap: 3.5rem;
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 1fr);
+    gap: 2.5rem;
   }
 }
 
@@ -240,42 +232,86 @@ button {
 .hero-visual {
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
   opacity: 0;
   transform: translateY(16px);
   animation: rise 0.9s var(--ease) 0.35s forwards;
 }
 
+.hero-devices {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  width: 100%;
+}
+
+.hero-device-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.hero-device-card--pixel {
+  flex: 0 1 52%;
+  z-index: 2;
+}
+
+.hero-device-card--ios {
+  flex: 0 1 42%;
+  z-index: 1;
+  transform: translateY(0.75rem);
+  opacity: 0.96;
+}
+
 .hero-device {
-  width: min(100%, 280px);
+  width: 100%;
+  max-width: 220px;
   height: auto;
-  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
+}
+
+.hero-device-card--ios .hero-device {
+  max-width: 180px;
 }
 
 @media (min-width: 900px) {
-  .hero-device {
-    width: min(100%, 320px);
+  .hero-device-card--pixel .hero-device {
+    max-width: 240px;
+  }
+
+  .hero-device-card--ios .hero-device {
+    max-width: 200px;
   }
 }
 
-.hero-orbit {
+.hero-device-label {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  text-align: center;
 }
 
-.hero-orbit span {
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
+.hero-device-label strong {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--fog);
-  border: 1px solid var(--line);
-  padding: 0.4rem 0.7rem;
-  background: rgba(16, 26, 23, 0.7);
+  color: #eef6f2;
+}
+
+.hero-device-label span {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fog-dim);
+  white-space: nowrap;
 }
 
 .btn {
