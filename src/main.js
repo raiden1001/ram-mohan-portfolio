@@ -64,13 +64,6 @@ function resumeDownload(variant = 'hero') {
   `;
 }
 
-function androidLogo() {
-  const src = `${import.meta.env.BASE_URL}android-logo.png`;
-  return `
-    <img class="brand-logo brand-logo--android" src="${src}" alt="" width="24" height="24" />
-  `;
-}
-
 function appleLogo() {
   return `
     <svg class="brand-logo brand-logo--apple" viewBox="0 0 24 24" aria-hidden="true">
@@ -101,21 +94,18 @@ function heroVisual() {
                   <div class="ui-banner"></div>
                   <div class="ui-panel"></div>
                 </div>
-                <img class="device-pop-logo" src="${androidSrc}" alt="" width="72" height="72" />
+                <img class="device-pop-logo device-pop-logo--android" src="${androidSrc}" alt="" width="72" height="72" />
               </div>
               <span class="device-gesture" aria-hidden="true"></span>
             </div>
           </div>
           <figcaption class="hero-device-label">
-            <div class="hero-device-title">
-              ${androidLogo()}
-              <strong>Android</strong>
-            </div>
+            <strong>Android</strong>
             <span>Compose · Kotlin · Flutter</span>
           </figcaption>
         </figure>
 
-        <figure class="hero-device-card hero-device-card--ios" data-device="ios" aria-label="iOS device">
+        <figure class="hero-device-card hero-device-card--ios" data-device="ios" tabindex="0" role="button" aria-label="iOS device — hover or click to reveal Apple logo">
           <div class="device-shell device-shell--ios">
             <div class="device-frame">
               <span class="device-camera device-camera--island" aria-hidden="true"></span>
@@ -132,15 +122,15 @@ function heroVisual() {
                   </div>
                   <div class="ui-panel ui-panel--ios"></div>
                 </div>
+                <span class="device-pop-logo device-pop-logo--apple" aria-hidden="true">
+                  ${appleLogo()}
+                </span>
               </div>
               <span class="device-gesture" aria-hidden="true"></span>
             </div>
           </div>
           <figcaption class="hero-device-label">
-            <div class="hero-device-title">
-              ${appleLogo()}
-              <strong>iOS</strong>
-            </div>
+            <strong>iOS</strong>
             <span>Swift · Flutter</span>
           </figcaption>
         </figure>
@@ -477,20 +467,19 @@ function initMetricCounters() {
 
 initProjectRail();
 initMetricCounters();
-initAndroidPop();
+initDevicePops();
 
-function initAndroidPop() {
-  const card = document.querySelector('.hero-device-card--android');
-  if (!card) return;
-
-  card.addEventListener('click', () => {
-    card.classList.toggle('is-popped');
-  });
-
-  card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
+function initDevicePops() {
+  document.querySelectorAll('.hero-device-card--android, .hero-device-card--ios').forEach((card) => {
+    card.addEventListener('click', () => {
       card.classList.toggle('is-popped');
-    }
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('is-popped');
+      }
+    });
   });
 }

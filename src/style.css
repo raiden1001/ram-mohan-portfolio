@@ -280,7 +280,8 @@ main {
   cursor: default;
 }
 
-.hero-device-card--android {
+.hero-device-card--android,
+.hero-device-card--ios {
   cursor: pointer;
 }
 
@@ -296,6 +297,13 @@ main {
 .hero-device-card--android.is-popped .device-shell {
   transform: translateY(-6px);
   filter: drop-shadow(0 22px 40px rgba(61, 255, 176, 0.18));
+}
+
+.hero-device-card--ios:hover .device-shell,
+.hero-device-card--ios:focus-visible .device-shell,
+.hero-device-card--ios.is-popped .device-shell {
+  transform: translateY(-6px);
+  filter: drop-shadow(0 22px 40px rgba(90, 200, 250, 0.2));
 }
 
 .device-frame {
@@ -443,7 +451,7 @@ main {
   border-radius: 0.75rem;
 }
 
-/* Android logo pops out of the screen on hover/click */
+/* Logos pop out of the screen on hover/click */
 .device-pop-logo {
   position: absolute;
   left: 50%;
@@ -453,24 +461,54 @@ main {
   object-fit: contain;
   transform: translate(-50%, 40%) scale(0.35);
   opacity: 0;
-  filter: drop-shadow(0 8px 16px rgba(61, 255, 176, 0.35));
   transition:
     transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
     opacity 0.35s var(--ease);
   pointer-events: none;
   z-index: 4;
+  display: grid;
+  place-items: center;
+}
+
+.device-pop-logo--android {
+  filter: drop-shadow(0 8px 16px rgba(61, 255, 176, 0.35));
+}
+
+.device-pop-logo--apple {
+  width: 3.2rem;
+  height: 3.2rem;
+  filter: drop-shadow(0 8px 16px rgba(90, 200, 250, 0.35));
+}
+
+.device-pop-logo--apple .brand-logo {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: block;
+}
+
+.brand-logo {
+  width: 1.35rem;
+  height: 1.35rem;
+  flex-shrink: 0;
+  display: block;
 }
 
 .hero-device-card--android:hover .device-pop-logo,
 .hero-device-card--android:focus-visible .device-pop-logo,
-.hero-device-card--android.is-popped .device-pop-logo {
+.hero-device-card--android.is-popped .device-pop-logo,
+.hero-device-card--ios:hover .device-pop-logo,
+.hero-device-card--ios:focus-visible .device-pop-logo,
+.hero-device-card--ios.is-popped .device-pop-logo {
   opacity: 1;
   transform: translate(-50%, -118%) scale(1.15);
 }
 
 .hero-device-card--android:hover .device-ui,
 .hero-device-card--android:focus-visible .device-ui,
-.hero-device-card--android.is-popped .device-ui {
+.hero-device-card--android.is-popped .device-ui,
+.hero-device-card--ios:hover .device-ui,
+.hero-device-card--ios:focus-visible .device-ui,
+.hero-device-card--ios.is-popped .device-ui {
   opacity: 0.45;
   transition: opacity 0.35s var(--ease);
 }
@@ -487,38 +525,9 @@ main {
   text-align: center;
 }
 
-.hero-device-title {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.hero-device-title .brand-logo {
-  width: 1.15rem;
-  height: 1.15rem;
-}
-
-.hero-device-title .brand-logo--apple {
-  width: 0.95rem;
-  height: 0.95rem;
-}
-
-.hero-device-title .brand-logo--android {
-  width: 1.25rem;
-  height: 1.25rem;
-  object-fit: contain;
-}
-
-.brand-logo {
-  width: 1.35rem;
-  height: 1.35rem;
-  flex-shrink: 0;
-  display: block;
-}
-
 .hero-device-label strong {
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -552,7 +561,10 @@ main {
 
   .hero-device-card--android:hover .device-pop-logo,
   .hero-device-card--android:focus-visible .device-pop-logo,
-  .hero-device-card--android.is-popped .device-pop-logo {
+  .hero-device-card--android.is-popped .device-pop-logo,
+  .hero-device-card--ios:hover .device-pop-logo,
+  .hero-device-card--ios:focus-visible .device-pop-logo,
+  .hero-device-card--ios.is-popped .device-pop-logo {
     transform: translate(-50%, -100%) scale(1);
   }
 }
