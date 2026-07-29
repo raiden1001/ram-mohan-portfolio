@@ -43,26 +43,23 @@ function resumeHref() {
 function resumeDownload(variant = 'hero') {
   return `
     <a
-      class="resume-terminal resume-terminal--${variant}"
+      class="resume-card resume-card--${variant}"
       href="${resumeHref()}"
       download="Ram_Mohan_Resume.pdf"
-      aria-label="Download Ram Mohan resume PDF"
+      aria-label="Download Ram Mohan resume as PDF"
     >
-      <span class="resume-terminal-bar" aria-hidden="true">
-        <i></i><i></i><i></i>
+      <span class="resume-card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M7 3.5h7.2L19 8.3V20a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 6 20V5a1.5 1.5 0 0 1 1-1.5Z" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 3.5V8h4.8" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 11v6.5M9.5 15.5 12 18l2.5-2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </span>
-      <span class="resume-terminal-body">
-        <span class="resume-terminal-line">
-          <span class="resume-prompt">$</span>
-          <span class="resume-idle">cat ~/resume.pdf</span>
-          <span class="resume-active">curl -O resume.pdf</span>
-          <span class="resume-cursor" aria-hidden="true"></span>
-        </span>
-        <span class="resume-terminal-meta">
-          <span>PDF · Senior Android Engineer</span>
-          <span class="resume-dl">Download ↓</span>
-        </span>
+      <span class="resume-card-copy">
+        <strong>Download resume</strong>
+        <span>PDF · Senior Android Engineer · Ready for recruiters</span>
       </span>
+      <span class="resume-card-cta" aria-hidden="true">Get PDF</span>
     </a>
   `;
 }
