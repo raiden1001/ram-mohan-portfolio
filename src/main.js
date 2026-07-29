@@ -80,36 +80,32 @@ function appleLogo() {
 }
 
 function heroVisual() {
+  const androidSrc = `${import.meta.env.BASE_URL}android-logo.png`;
   return `
-    <div class="hero-visual" aria-hidden="true">
+    <div class="hero-visual">
       <div class="hero-devices">
-        <figure class="hero-device-card hero-device-card--pixel">
-          <svg class="hero-device" viewBox="0 0 300 620" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="pixelBody" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#1a2e28"/>
-                <stop offset="100%" stop-color="#0d1815"/>
-              </linearGradient>
-              <linearGradient id="pixelGlow" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#3dffb0" stop-opacity="0.14"/>
-                <stop offset="100%" stop-color="#ffb84a" stop-opacity="0.08"/>
-              </linearGradient>
-            </defs>
-            <rect x="18" y="10" width="264" height="600" rx="34" fill="url(#pixelBody)" stroke="#3dffb0" stroke-opacity="0.45" stroke-width="2"/>
-            <rect x="28" y="22" width="244" height="576" rx="28" fill="#050a08"/>
-            <rect x="28" y="22" width="244" height="576" rx="28" fill="url(#pixelGlow)"/>
-            <!-- Pixel hole-punch camera -->
-            <circle cx="150" cy="42" r="7" fill="#050a08" stroke="#c8d4cf" stroke-opacity="0.2" stroke-width="1"/>
-            <circle cx="150" cy="42" r="3.5" fill="#1a2e28"/>
-            <rect x="48" y="78" width="120" height="10" rx="3" fill="#3dffb0" opacity="0.8"/>
-            <rect x="48" y="104" width="188" height="6" rx="2" fill="#8a9a93" opacity="0.45"/>
-            <rect x="48" y="122" width="150" height="6" rx="2" fill="#8a9a93" opacity="0.3"/>
-            <rect x="48" y="168" width="90" height="78" rx="10" fill="#162420" stroke="#3dffb0" stroke-opacity="0.45"/>
-            <rect x="150" y="168" width="90" height="78" rx="10" fill="#162420" stroke="#ffb84a" stroke-opacity="0.5"/>
-            <rect x="48" y="264" width="192" height="56" rx="10" fill="#162420" stroke="#c8d4cf" stroke-opacity="0.12"/>
-            <rect x="48" y="340" width="192" height="150" rx="12" fill="#101a17" stroke="#3dffb0" stroke-opacity="0.3"/>
-            <rect x="108" y="560" width="84" height="5" rx="2.5" fill="#c8d4cf" opacity="0.45"/>
-          </svg>
+        <figure class="hero-device-card hero-device-card--android" data-device="android" tabindex="0" role="button" aria-label="Android device — hover or click to reveal Android logo">
+          <div class="device-shell device-shell--android">
+            <div class="device-frame">
+              <span class="device-camera device-camera--punch" aria-hidden="true"></span>
+              <div class="device-screen">
+                <div class="device-status">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="device-ui device-ui--android">
+                  <div class="ui-chip ui-chip--mint"></div>
+                  <div class="ui-row">
+                    <div class="ui-tile"></div>
+                    <div class="ui-tile ui-tile--amber"></div>
+                  </div>
+                  <div class="ui-banner"></div>
+                  <div class="ui-panel"></div>
+                </div>
+                <img class="device-pop-logo" src="${androidSrc}" alt="" width="72" height="72" />
+              </div>
+              <span class="device-gesture" aria-hidden="true"></span>
+            </div>
+          </div>
           <figcaption class="hero-device-label">
             <div class="hero-device-title">
               ${androidLogo()}
@@ -119,30 +115,27 @@ function heroVisual() {
           </figcaption>
         </figure>
 
-        <figure class="hero-device-card hero-device-card--ios">
-          <svg class="hero-device" viewBox="0 0 300 620" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="iosBody" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#1c2428"/>
-                <stop offset="100%" stop-color="#0e1418"/>
-              </linearGradient>
-              <linearGradient id="iosGlow" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#5ac8fa" stop-opacity="0.16"/>
-                <stop offset="100%" stop-color="#ffb84a" stop-opacity="0.08"/>
-              </linearGradient>
-            </defs>
-            <rect x="22" y="12" width="256" height="596" rx="48" fill="url(#iosBody)" stroke="#5ac8fa" stroke-opacity="0.4" stroke-width="2"/>
-            <rect x="30" y="20" width="240" height="580" rx="42" fill="#070b0e"/>
-            <rect x="30" y="20" width="240" height="580" rx="42" fill="url(#iosGlow)"/>
-            <rect x="108" y="34" width="84" height="22" rx="11" fill="#05080a"/>
-            <rect x="52" y="84" width="100" height="10" rx="3" fill="#5ac8fa" opacity="0.75"/>
-            <rect x="52" y="110" width="176" height="6" rx="2" fill="#8a9a93" opacity="0.4"/>
-            <rect x="52" y="154" width="196" height="64" rx="14" fill="#142028" stroke="#5ac8fa" stroke-opacity="0.4"/>
-            <rect x="52" y="236" width="92" height="84" rx="16" fill="#142028" stroke="#ffb84a" stroke-opacity="0.45"/>
-            <rect x="156" y="236" width="92" height="84" rx="16" fill="#142028" stroke="#5ac8fa" stroke-opacity="0.35"/>
-            <rect x="52" y="340" width="196" height="120" rx="16" fill="#101820" stroke="#c8d4cf" stroke-opacity="0.15"/>
-            <rect x="110" y="562" width="80" height="4" rx="2" fill="#c8d4cf" opacity="0.5"/>
-          </svg>
+        <figure class="hero-device-card hero-device-card--ios" data-device="ios" aria-label="iOS device">
+          <div class="device-shell device-shell--ios">
+            <div class="device-frame">
+              <span class="device-camera device-camera--island" aria-hidden="true"></span>
+              <div class="device-screen">
+                <div class="device-status device-status--ios">
+                  <span></span><span></span>
+                </div>
+                <div class="device-ui device-ui--ios">
+                  <div class="ui-chip ui-chip--blue"></div>
+                  <div class="ui-banner ui-banner--ios"></div>
+                  <div class="ui-row">
+                    <div class="ui-tile ui-tile--ios"></div>
+                    <div class="ui-tile ui-tile--ios-alt"></div>
+                  </div>
+                  <div class="ui-panel ui-panel--ios"></div>
+                </div>
+              </div>
+              <span class="device-gesture" aria-hidden="true"></span>
+            </div>
+          </div>
           <figcaption class="hero-device-label">
             <div class="hero-device-title">
               ${appleLogo()}
@@ -484,3 +477,20 @@ function initMetricCounters() {
 
 initProjectRail();
 initMetricCounters();
+initAndroidPop();
+
+function initAndroidPop() {
+  const card = document.querySelector('.hero-device-card--android');
+  if (!card) return;
+
+  card.addEventListener('click', () => {
+    card.classList.toggle('is-popped');
+  });
+
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.classList.toggle('is-popped');
+    }
+  });
+}
