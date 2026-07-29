@@ -57,7 +57,7 @@ function resumeDownload(variant = 'hero') {
       </span>
       <span class="resume-card-copy">
         <strong>Download resume</strong>
-        <span>PDF · Senior Android Engineer · Ready for recruiters</span>
+        <span>PDF · Senior Android Engineer</span>
       </span>
       <span class="resume-card-cta" aria-hidden="true">Get PDF</span>
     </a>
