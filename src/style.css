@@ -388,6 +388,133 @@ main {
   color: var(--mint);
 }
 
+/* —— Resume terminal download —— */
+.resume-terminal {
+  display: block;
+  width: min(100%, 28rem);
+  margin-top: 1.35rem;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, #0d1815 0%, #101a17 100%);
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.resume-terminal:hover,
+.resume-terminal:focus-visible {
+  border-color: var(--mint);
+  color: inherit;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  outline: none;
+}
+
+.resume-terminal-bar {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.resume-terminal-bar i {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #3a4a44;
+}
+
+.resume-terminal-bar i:nth-child(1) { background: #ff5f57; }
+.resume-terminal-bar i:nth-child(2) { background: #ffbd2e; }
+.resume-terminal-bar i:nth-child(3) { background: #28c840; }
+
+.resume-terminal-body {
+  display: block;
+  padding: 0.9rem 1rem 1rem;
+}
+
+.resume-terminal-line {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  min-height: 1.4em;
+}
+
+.resume-prompt {
+  color: var(--mint);
+  font-weight: 500;
+}
+
+.resume-idle {
+  color: var(--fog-dim);
+}
+
+.resume-active {
+  display: none;
+  color: #eef6f2;
+}
+
+.resume-terminal:hover .resume-idle,
+.resume-terminal:focus-visible .resume-idle {
+  display: none;
+}
+
+.resume-terminal:hover .resume-active,
+.resume-terminal:focus-visible .resume-active {
+  display: inline;
+}
+
+.resume-cursor {
+  width: 0.55rem;
+  height: 1.05em;
+  background: var(--amber);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.resume-terminal-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--line);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fog-dim);
+}
+
+.resume-dl {
+  color: var(--amber);
+}
+
+.resume-terminal:hover .resume-dl,
+.resume-terminal:focus-visible .resume-dl {
+  color: var(--mint);
+}
+
+.resume-terminal--contact {
+  margin-top: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume-cursor {
+    animation: none;
+  }
+
+  .resume-terminal:hover,
+  .resume-terminal:focus-visible {
+    transform: none;
+  }
+}
+
 @keyframes rise {
   to {
     opacity: 1;

@@ -36,6 +36,37 @@ function socialClass(url) {
   return !url || url === '#' ? 'is-placeholder' : '';
 }
 
+function resumeHref() {
+  return `${import.meta.env.BASE_URL}Ram_Mohan_Resume.pdf`;
+}
+
+function resumeDownload(variant = 'hero') {
+  return `
+    <a
+      class="resume-terminal resume-terminal--${variant}"
+      href="${resumeHref()}"
+      download="Ram_Mohan_Resume.pdf"
+      aria-label="Download Ram Mohan resume PDF"
+    >
+      <span class="resume-terminal-bar" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </span>
+      <span class="resume-terminal-body">
+        <span class="resume-terminal-line">
+          <span class="resume-prompt">$</span>
+          <span class="resume-idle">cat ~/resume.pdf</span>
+          <span class="resume-active">curl -O resume.pdf</span>
+          <span class="resume-cursor" aria-hidden="true"></span>
+        </span>
+        <span class="resume-terminal-meta">
+          <span>PDF · Senior Android Engineer</span>
+          <span class="resume-dl">Download ↓</span>
+        </span>
+      </span>
+    </a>
+  `;
+}
+
 function androidLogo() {
   const src = `${import.meta.env.BASE_URL}android-logo.png`;
   return `
@@ -257,6 +288,7 @@ app.innerHTML = `
             <a class="btn btn-primary" href="#work">View work</a>
             <a class="btn btn-ghost" href="#contact">Contact</a>
           </div>
+          ${resumeDownload('hero')}
         </div>
         ${heroVisual()}
       </div>
@@ -339,6 +371,7 @@ app.innerHTML = `
             </a>
           </div>
         </div>
+        ${resumeDownload('contact')}
       </div>
     </section>
   </main>
