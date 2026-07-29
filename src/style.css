@@ -163,8 +163,8 @@ main {
 
 @media (min-width: 900px) {
   .hero-shell {
-    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
-    column-gap: 4.5rem;
+    grid-template-columns: minmax(0, 0.85fr) minmax(420px, 1.15fr);
+    column-gap: 3rem;
   }
 
   .hero-content {
@@ -260,7 +260,7 @@ main {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: clamp(1rem, 2.5vw, 1.75rem);
+  gap: clamp(1.25rem, 3vw, 2rem);
   width: 100%;
 }
 
@@ -272,7 +272,7 @@ main {
   gap: 0.85rem;
   min-width: 0;
   flex: 1 1 0;
-  max-width: 220px;
+  max-width: 280px;
   border: none;
   background: transparent;
   padding: 0;
@@ -287,7 +287,7 @@ main {
 
 .device-shell {
   width: 100%;
-  max-width: 200px;
+  max-width: 260px;
   filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.45));
   transition: transform 0.35s var(--ease), filter 0.35s var(--ease);
 }
@@ -544,11 +544,11 @@ main {
 
 @media (min-width: 900px) {
   .hero-device-card {
-    max-width: 230px;
+    max-width: 300px;
   }
 
   .device-shell {
-    max-width: 210px;
+    max-width: 280px;
   }
 }
 
