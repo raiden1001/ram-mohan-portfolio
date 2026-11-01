@@ -4,28 +4,37 @@ export const resume = {
   brand: 'RAM MOHAN',
   role: 'Senior Android Engineer',
   tagline:
-    'Building high-scale FinTech and hybrid mobile apps for remote teams across Taiwan, the UK, Germany, Japan, and France.',
-  locationNote: 'Remote · FinTech · Jetpack Compose',
+    'Secure, high-performance Kotlin and Jetpack Compose apps for banking, e-commerce, HealthTech, and connected cars.',
+  locationNote: 'Remote · Trivandrum · FinTech',
   email: 'ram10.rm6@gmail.com',
   phone: '+91 9497891704',
   social: {
     linkedin: 'https://www.linkedin.com/in/ram-mohan-b750a1180/',
     github: 'https://github.com/raiden1001',
+    medium: 'https://medium.com/@ram10.rm6',
   },
   summary:
-    'Senior Android Engineer with 4+ years building high-scale FinTech and hybrid mobile applications, including a banking platform serving 500K+ active users. Specializes in Kotlin, Jetpack Compose, and Clean Architecture — bridging native Android, iOS (Swift), and Flutter to ship cross-platform features without full rewrites.',
+    'Senior Android Engineer with nearly 5 years building secure, high-performance Kotlin and Jetpack Compose apps for banking, e-commerce, HealthTech, and connected cars — including a banking platform serving 500K+ active users. Specializes in startup performance, MVI architecture, and secure payments, bridging native Android, iOS (Swift), and Flutter to ship cross-platform features without full rewrites.',
   metrics: [
     { value: 63, suffix: '%', label: 'Faster app launch', detail: 'Line Bank performance' },
     { value: 28, suffix: '%', label: 'Fewer state bugs', detail: 'Redux-style ViewModels' },
     { value: 500, suffix: 'K+', label: 'Active users', detail: 'Enterprise FinTech' },
-    { value: 4, suffix: '+', label: 'Years shipping', detail: 'Fully remote' },
+    { value: 5, suffix: '', label: 'Years shipping', detail: 'Nearly · fully remote' },
   ],
   competencies: {
     languages: ['Kotlin', 'Java', 'Dart', 'Swift'],
-    android: ['Android SDK', 'Multi-module Architecture', 'Jetpack Compose', 'Material 3'],
+    android: [
+      'Android SDK',
+      'Jetpack Compose',
+      'Multi-module Architecture',
+      'Material Design',
+      'Android Auto',
+      'Android NDK',
+    ],
     architecture: ['MVVM', 'MVI', 'Clean Architecture', 'Hilt', 'Coroutines / Flow'],
     crossPlatform: ['Flutter hybrid', 'MethodChannel', 'iOS / TestFlight / App Store'],
-    tooling: ['Cursor', 'Codex', 'Jenkins', 'GitLab CI/CD', 'LeakCanary'],
+    security: ['Android Keystore', 'Biometric Auth', 'ECDSA Cryptography'],
+    tooling: ['Cursor', 'Codex', 'Jenkins', 'GitLab CI/CD', 'Crashlytics'],
   },
   projects: [
     {
@@ -37,7 +46,7 @@ export const resume = {
       problem:
         'A large-scale banking app needed faster launches, fewer state bugs, and banking-grade security across 50+ screens.',
       approach:
-        'Restructured coroutines, eliminated 50+ memory leaks, engineered a Redux-inspired StateFlow ViewModel framework, and led Jetpack Compose migration while delivering P2P, QR payments, and secure beneficiary flows with Keystore + ECDSA + biometrics.',
+        'Restructured coroutines, eliminated 50+ memory leaks, engineered a Redux-inspired StateFlow ViewModel framework, and led Jetpack Compose migration while delivering P2P, QR payments, and secure beneficiary flows with Keystore + ECDSA + biometrics. Led 2 mobile developers and fixed ANRs/crashes across Video KYC and OCR transaction modules.',
       impact: [
         '63% faster app launch',
         '28% fewer state-management bugs',
@@ -55,12 +64,12 @@ export const resume = {
       problem:
         'A booking platform needed incremental feature rollout across Android, Flutter, and iOS without a full rewrite — while stabilizing a fragile multi-module CI pipeline.',
       approach:
-        'Architected a hybrid environment embedding Flutter modules in native Android, engineered a secure MethodChannel bridge for WebView checkout/payments, shipped native iOS in Swift through TestFlight to App Store, and accelerated delivery with Cursor and Codex as informal tech lead.',
+        'Architected a hybrid environment embedding Flutter modules (Riverpod, Bloc, Provider) in native Android and iOS hosts, engineered a secure MethodChannel bridge for checkout/payments, fixed 16 KB page-size compatibility via updated NDK, and led 5 developers while accelerating delivery with AI-assisted workflows.',
       impact: [
         '43% fewer CI build failures',
         'Incremental hybrid rollout without rewrite',
         'Secure Flutter↔Native payment sessions',
-        'End-to-end iOS release ownership',
+        'Led 5 developers end-to-end',
       ],
       stack: ['Kotlin', 'Flutter', 'Swift', 'MethodChannel', 'CI/CD'],
       callout:
@@ -104,18 +113,18 @@ export const resume = {
       id: 'cariteko',
       name: 'Cariteko',
       region: 'Japan',
-      type: 'Car rental',
-      headline: 'Booking · payments · live tracking',
+      type: 'Car rental · connected car',
+      headline: 'Android Auto · booking · live tracking',
       problem:
-        'Car rental flows needed reliable booking/payments with maps and real-time vehicle tracking — without crash-prone paths.',
+        'Car rental flows needed reliable booking/payments with maps, real-time vehicle tracking, and in-car parking via Android Auto — without crash-prone paths.',
       approach:
-        'Built booking and payment workflows with Google Maps SDK and live tracking; used Android Profiler and memory optimization to stabilize crash-prone flows.',
+        'Built booking and payment workflows with Google Maps SDK and live tracking; implemented Android Auto (Android for Cars) for real-time parking; used Android Profiler and memory optimization to stabilize crash-prone flows.',
       impact: [
+        'Android Auto parking support',
         'Stable booking & payment paths',
         'Real-time vehicle tracking',
-        'Profiler-driven crash reduction',
       ],
-      stack: ['Kotlin', 'Maps SDK', 'Payments'],
+      stack: ['Kotlin', 'Android Auto', 'Maps SDK', 'Payments'],
     },
     {
       id: 'ago',
@@ -164,9 +173,7 @@ export const resume = {
   ],
   education: [
     'B.Tech in Computer Science Engineering — University College of Engineering Trivandrum (2021)',
-    'Meta Android Developer Professional Certificate',
-    'ServiceNow Certified System Administrator',
-    'Freshdesk Product Expert Certification',
+    'Meta Android Developer Professional Certificate (2024)',
   ],
   employer: {
     title: 'Senior Android Engineer',
